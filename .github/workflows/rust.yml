@@ -22,6 +22,10 @@ jobs:
       with:
         toolchain: nightly
         override: true
+    - name: Install packages
+      run: |
+        sudo apt update
+        sudo apt install -y libdbus-1-dev librust-libdbus-sys-dev libdbus-1-3
     - name: Build
       run: cargo build --verbose
     - name: Run tests
@@ -48,6 +52,10 @@ jobs:
       - uses: hecrj/setup-rust-action@v1
         with:
           rust-version: nightly
+      - name: Install packages
+        run: |
+          sudo apt update
+          sudo apt install -y libdbus-1-dev librust-libdbus-sys-dev libdbus-1-3
       - uses: actions-rs/tarpaulin@v0.1
         with:
           args: --all-features
