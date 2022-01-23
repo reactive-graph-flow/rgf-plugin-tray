@@ -54,10 +54,39 @@ Creates a tray item.
 
 #### Entity Types
 
-| Name     | Property       | Data Type | Socket Type |
-|----------|----------------|-----------|-------------|
-| TrayItem | name           | string    | output      |
-|          | appid          | object    | output      |
+| Name   | Property | Data Type | Socket Type |
+|--------|----------|-----------|-------------|
+| Tray   | menu     | object    | input       |
+|        | trigger  | any       | output      |
+
+#### Example Tray
+
+##### Property `menu`
+
+```json
+{
+  title: "Example Tray",
+  icon: "accessories-calculator",
+  items: [
+    {
+      label: "First Entry",
+      value: 1
+    },
+    {
+      label: "Second Entry",
+      value: 2
+    },
+    {
+      label: "Third Entry",
+      value: 3
+    }
+  ]
+}
+```
+
+##### Property `trigger`
+
+If you click on the tray menu item `First Entry` the property `trigger` will be set to `1`.
 
 ### Thanks to
 
