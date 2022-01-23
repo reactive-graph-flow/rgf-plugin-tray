@@ -1,0 +1,42 @@
+mutation {
+  instances {
+    entities {
+      create(
+        typeName: "tray",
+        id: "63c54aa9-5184-4359-a7e2-ac102d7c5c84",
+        properties: [
+          {
+            name: "menu",
+            value: {
+              title: "Example Tray",
+              icon: "accessories-calculator",
+              items: [
+                {
+                  label: "First Entry",
+                  value: 1
+                },
+                {
+                  label: "Second Entry",
+                  value: 2
+                },
+                {
+                  label: "Third Entry",
+                  value: 3
+                }
+              ]
+            }
+          }
+        ]
+      ) {
+        id,
+        type {name},
+        properties(
+          names: [
+            "menu",
+            "trigger"
+          ]
+        )
+      }
+    }
+  }
+}

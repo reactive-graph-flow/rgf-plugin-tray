@@ -1,0 +1,42 @@
+mutation {
+  instances {
+    entities {
+      create(
+        typeName: "tray",
+        id: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
+        properties: [
+          {
+            name: "menu",
+            value: {
+              title: "Firefox",
+              icon: "inexor",
+              items: [
+                {
+                  label: "A",
+                  value: "A"
+                },
+                {
+                  label: "B",
+                  value: "B"
+                },
+                {
+                  label: "C",
+                  value: "C"
+                }
+              ]
+            }
+          }
+        ]
+      ) {
+        id,
+        type {name},
+        properties(
+          names: [
+            "menu",
+            "trigger"
+          ]
+        )
+      }
+    }
+  }
+}
