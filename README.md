@@ -52,6 +52,12 @@ Creates a tray item.
 | MacOS    | ✖             |
 | Windows  | ✖             |
 
+#### Build Dependencies (Ubuntu)
+
+```
+sudo apt install -y libdbus-1-dev librust-libdbus-sys-dev libdbus-1-3
+```
+
 #### Entity Types
 
 | Name   | Property | Data Type | Socket Type |
