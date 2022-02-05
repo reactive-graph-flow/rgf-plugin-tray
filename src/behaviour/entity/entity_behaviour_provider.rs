@@ -1,9 +1,9 @@
 use std::sync::Arc;
 
+use crate::di::*;
 use async_trait::async_trait;
 use log::debug;
 use uuid::Uuid;
-use waiter_di::*;
 
 use crate::behaviour::entity::tray::Tray;
 use crate::behaviour::entity::tray::TRAY;
@@ -13,7 +13,7 @@ use crate::plugins::EntityBehaviourProvider;
 #[wrapper]
 pub struct TrayStorage(std::sync::RwLock<std::collections::HashMap<Uuid, std::sync::Arc<Tray>>>);
 
-#[waiter_di::provides]
+#[provides]
 fn create_tray_storage() -> TrayStorage {
     TrayStorage(std::sync::RwLock::new(std::collections::HashMap::new()))
 }
