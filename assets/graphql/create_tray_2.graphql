@@ -2,7 +2,7 @@ mutation {
   instances {
     entities {
       create(
-        typeName: "tray",
+        type: "tray",
         id: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
         properties: [
           {
@@ -35,7 +35,10 @@ mutation {
             "menu",
             "trigger"
           ]
-        )
+        ) {
+          name
+          value
+        }
       }
     }
   }

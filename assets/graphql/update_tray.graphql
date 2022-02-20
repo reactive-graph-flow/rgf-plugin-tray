@@ -13,7 +13,10 @@ mutation {
             "menu",
             "trigger"
           ]
-        )
+        ) {
+          name
+          value
+        }
       }
     }
   }
