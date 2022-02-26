@@ -50,12 +50,14 @@ impl TrayEntityBehaviourProvider for TrayEntityBehaviourProviderImpl {
         if device_key.is_ok() {
             let tray = Arc::new(device_key.unwrap());
             self.tray.0.write().unwrap().insert(id, tray);
+            entity_instance.add_behaviour(TRAY);
             debug!("Added behaviour {} to entity instance {}", TRAY, id);
         }
     }
 
     fn remove_tray(&self, entity_instance: Arc<ReactiveEntityInstance>) {
         self.tray.0.write().unwrap().remove(&entity_instance.id);
+        entity_instance.remove_behaviour(TRAY);
         debug!("Removed behaviour {} from entity instance {}", TRAY, entity_instance.id);
     }
 
