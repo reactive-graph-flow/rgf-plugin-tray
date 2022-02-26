@@ -46,7 +46,7 @@ impl TrayEntityBehaviourProviderImpl {
 impl TrayEntityBehaviourProvider for TrayEntityBehaviourProviderImpl {
     fn create_tray(&self, entity_instance: Arc<ReactiveEntityInstance>) {
         let id = entity_instance.id;
-        let device_key = Tray::new(entity_instance);
+        let device_key = Tray::new(entity_instance.clone());
         if device_key.is_ok() {
             let tray = Arc::new(device_key.unwrap());
             self.tray.0.write().unwrap().insert(id, tray);
