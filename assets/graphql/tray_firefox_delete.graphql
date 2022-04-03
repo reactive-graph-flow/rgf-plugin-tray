@@ -1,14 +1,28 @@
 mutation {
   instances {
     relations {
-      menuItem2: delete(
+      trayMenuItemKioskMode: delete(
+        edgeKey: {
+          outboundId: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
+          typeName: "tray_has_menu_item"
+          inboundId: "80d8ba30-8b2c-4992-9514-3e2671a887b3",
+        }
+      )
+      trayMenuItemInexorOrg: delete(
+        edgeKey: {
+          outboundId: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
+          typeName: "tray_has_menu_item"
+          inboundId: "8ec74c42-b187-4cc2-b338-91c25d127e79",
+        }
+      )
+      trayMenuItemNewTab: delete(
         edgeKey: {
           outboundId: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
           typeName: "tray_has_menu_item"
           inboundId: "1e17649a-d913-4240-8deb-9224dc39a80d",
         }
       )
-      menuItem1: delete(
+      trayMenuItemNewWindow: delete(
         edgeKey: {
           outboundId: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
           typeName: "tray_has_menu_item"
@@ -17,8 +31,10 @@ mutation {
       )
     }
     entities {
-      menuItem2: delete(id: "1e17649a-d913-4240-8deb-9224dc39a80d")
-      menuItem1: delete(id: "dcc1c393-eeeb-4406-bd73-cc83b1ec5254")
+      trayMenuItemKioskMode: delete(id: "80d8ba30-8b2c-4992-9514-3e2671a887b3")
+      trayMenuItemInexorOrg: delete(id: "8ec74c42-b187-4cc2-b338-91c25d127e79")
+      trayMenuItemNewTab: delete(id: "1e17649a-d913-4240-8deb-9224dc39a80d")
+      trayMenuItemNewWindow: delete(id: "dcc1c393-eeeb-4406-bd73-cc83b1ec5254")
       tray: delete(id: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930")
     }
   }

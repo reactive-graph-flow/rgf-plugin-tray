@@ -1,47 +1,20 @@
 mutation {
   instances {
     entities {
-
-      tray: create (
-        type: "tray",
-        id: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
-        properties: [
-          {
-            name: "name",
-            value: "Firefox Tray"
-          },
-          {
-            name: "title",
-            value: "Firefox"
-          },
-          {
-            name: "icon",
-            value: "firefox"
-          }
-        ]
-      )
-      {
-        id
-      }
-
-      trayMenuItemNewWindow: create (
+      trayMenuItemKioskMode: create (
         type: "tray_menu_item",
-        id: "dcc1c393-eeeb-4406-bd73-cc83b1ec5254",
+        id: "80d8ba30-8b2c-4992-9514-3e2671a887b3",
         components: [
           "system_command"
         ]
         properties: [
           {
             name: "name",
-            value: "Firefox: Open a new window"
+            value: "Firefox: Opens inexor.org full screen without user interface. Note: Firefox must not already running to go into kiosk mode"
           },
           {
             name: "title",
-            value: "Open a new window"
-          },
-          {
-            name: "icon",
-            value: "firefox"
+            value: "Kiosk Mode"
           },
           {
             name: "current_dir",
@@ -54,7 +27,8 @@ mutation {
           {
             name: "parameters",
             value: [
-              "-new-window"
+              "--kiosk",
+              "https://www.inexor.org/"
             ]
           },
         ]
@@ -62,16 +36,13 @@ mutation {
       {
         id
       }
-
     }
-
     relations {
-
-      trayMenuItemNewWindow: create(
+      trayMenuItemKioskMode: create(
         edgeKey: {
           outboundId: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
           typeName: "tray_has_menu_item"
-          inboundId: "dcc1c393-eeeb-4406-bd73-cc83b1ec5254",
+          inboundId: "80d8ba30-8b2c-4992-9514-3e2671a887b3",
         }
       )
       {
@@ -85,8 +56,6 @@ mutation {
           id
         }
       }
-
     }
-
   }
 }
