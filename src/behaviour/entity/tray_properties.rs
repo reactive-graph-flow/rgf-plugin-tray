@@ -6,21 +6,21 @@ use strum_macros::{AsRefStr, Display, IntoStaticStr};
 #[allow(non_camel_case_types)]
 #[derive(AsRefStr, IntoStaticStr, Display)]
 pub enum TrayProperties {
-    #[strum(serialize = "menu")]
-    MENU,
-    #[strum(serialize = "trigger")]
-    TRIGGER,
+    #[strum(serialize = "title")]
+    TITLE,
+    #[strum(serialize = "icon")]
+    ICON,
 }
 
 impl TrayProperties {
     pub fn default_value(&self) -> Value {
         match self {
-            TrayProperties::MENU => json!({}),
-            TrayProperties::TRIGGER => json!({}),
+            TrayProperties::TITLE => json!("Inexor"),
+            TrayProperties::ICON => json!("accessories-calculator"),
         }
     }
     pub fn properties() -> NamedProperties {
-        vec![NamedProperty::from(TrayProperties::MENU), NamedProperty::from(TrayProperties::TRIGGER)]
+        vec![NamedProperty::from(TrayProperties::TITLE), NamedProperty::from(TrayProperties::ICON)]
     }
 }
 

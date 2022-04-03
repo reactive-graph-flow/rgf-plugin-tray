@@ -1,0 +1,11 @@
+{
+  "name": "tray_menu_item",
+  "description": "Tray Menu Item",
+  "properties": [
+    {
+      "name": "title",
+      "data_type": "string",
+      "socket_type": "input"
+    }
+  ]
+}

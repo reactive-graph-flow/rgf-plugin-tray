@@ -1,0 +1,10 @@
+{
+  "name": "tray_has_menu_item",
+  "description": "Tray has menu item",
+  "outbound_type": "tray",
+  "inbound_type": "tray_menu_item",
+  "components": [
+  ],
+  "properties": [
+  ]
+}

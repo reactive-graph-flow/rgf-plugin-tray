@@ -1,0 +1,16 @@
+mutation {
+  instances {
+    relations {
+      shutdown: delete(
+        edgeKey: {
+          outboundId: "63c54aa9-5184-4359-a7e2-ac102d7c5c84",
+          typeName: "tray_has_menu_item"
+          inboundId: "6ba7b810-9e15-11d1-50b4-00c04fd530c7",
+        }
+      )
+    }
+    entities {
+      tray: delete(id: "63c54aa9-5184-4359-a7e2-ac102d7c5c84")
+    }
+  }
+}

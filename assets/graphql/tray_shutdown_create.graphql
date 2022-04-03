@@ -1,0 +1,71 @@
+mutation {
+  instances {
+    entities {
+      tray: create(
+        type: "tray",
+        id: "63c54aa9-5184-4359-a7e2-ac102d7c5c84",
+        properties: [
+          {
+            name: "name",
+            value: "Inexor Shutdown Tray"
+          },
+          {
+            name: "title",
+            value: "Inexor"
+          },
+          {
+            name: "icon",
+            value: "ubuntusoftware"
+          }
+        ]
+      )
+      {
+        id
+      }
+      shutdown: update(
+        id: "6ba7b810-9e15-11d1-50b4-00c04fd530c7",
+        addComponents: [
+          "tray_menu_item"
+        ],
+        properties: [
+          {
+            name: "title",
+            value: "Shutdown Inexor"
+          },
+          {
+            name: "icon",
+            value: "ubuntusoftware"
+          },
+        ]
+      ) {
+        id
+        components
+        behaviours
+        properties {
+          name
+          value
+        }
+      }
+    }
+    relations {
+      trayShutdownMenuItem2: create(
+        edgeKey: {
+          outboundId: "63c54aa9-5184-4359-a7e2-ac102d7c5c84",
+          typeName: "tray_has_menu_item"
+          inboundId: "6ba7b810-9e15-11d1-50b4-00c04fd530c7",
+        }
+      )
+      {
+        outbound {
+          id
+        }
+        type {
+          name
+        }
+        inbound {
+          id
+        }
+      }
+    }
+  }
+}

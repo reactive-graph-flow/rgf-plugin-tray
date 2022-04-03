@@ -1,0 +1,22 @@
+{
+  "name": "tray_menu_item",
+  "group": "desktop",
+  "description": "Tray Menu Item",
+  "components": [
+    "named",
+    "generator",
+    "tray_menu_item"
+  ],
+  "properties": [
+  ],
+  "extensions": [
+    {
+      "name": "dublin-core",
+      "extension":{
+        "title": "Tray Menu Item",
+        "subject": "Tray Menu Item",
+        "creator": "Hanack"
+      }
+    }
+  ]
+}

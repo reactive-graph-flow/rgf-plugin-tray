@@ -1,0 +1,25 @@
+mutation {
+  instances {
+    relations {
+      menuItem2: delete(
+        edgeKey: {
+          outboundId: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
+          typeName: "tray_has_menu_item"
+          inboundId: "1e17649a-d913-4240-8deb-9224dc39a80d",
+        }
+      )
+      menuItem1: delete(
+        edgeKey: {
+          outboundId: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
+          typeName: "tray_has_menu_item"
+          inboundId: "dcc1c393-eeeb-4406-bd73-cc83b1ec5254",
+        }
+      )
+    }
+    entities {
+      menuItem2: delete(id: "1e17649a-d913-4240-8deb-9224dc39a80d")
+      menuItem1: delete(id: "dcc1c393-eeeb-4406-bd73-cc83b1ec5254")
+      tray: delete(id: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930")
+    }
+  }
+}

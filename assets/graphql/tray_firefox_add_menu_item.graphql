@@ -1,0 +1,66 @@
+mutation {
+  instances {
+    entities {
+
+      menuItem2: create (
+        type: "tray_menu_item",
+        id: "1e17649a-d913-4240-8deb-9224dc39a80d",
+        components: [
+          "system_command"
+        ]
+        properties: [
+          {
+            name: "name",
+            value: "Firefox: Open a new tab"
+          },
+          {
+            name: "title",
+            value: "Open a new tab"
+          },
+          {
+            name: "icon",
+            value: "firefox"
+          },
+          {
+            name: "current_dir",
+            value: "."
+          },
+          {
+            name: "command",
+            value: "/usr/lib/firefox/firefox"
+          },
+          {
+            name: "parameters",
+            value: [
+              "-js-console"
+            ]
+          },
+        ]
+      )
+      {
+        id
+      }
+
+    }
+    relations {
+      trayMenuItem2: create(
+        edgeKey: {
+          outboundId: "e2feebd6-8a7a-4fcf-bd9c-015b0454b930",
+          typeName: "tray_has_menu_item"
+          inboundId: "1e17649a-d913-4240-8deb-9224dc39a80d",
+        }
+      )
+      {
+        outbound {
+          id
+        }
+        type {
+          name
+        }
+        inbound {
+          id
+        }
+      }
+    }
+  }
+}

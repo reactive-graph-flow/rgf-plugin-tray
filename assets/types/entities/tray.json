@@ -3,20 +3,18 @@
   "group": "desktop",
   "description": "Tray",
   "components": [
-    "named",
-    "flow_2d",
-    "flow_3d"
+    "named"
   ],
   "properties": [
     {
-      "name": "menu",
-      "data_type": "object",
+      "name": "title",
+      "data_type": "string",
       "socket_type": "input"
     },
     {
-      "name": "trigger",
+      "name": "icon",
       "data_type": "string",
-      "socket_type": "output"
+      "socket_type": "input"
     }
   ],
   "extensions": [
